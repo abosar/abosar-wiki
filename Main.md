@@ -6,3 +6,4 @@ React.jsは画面周りを担当し、DjangoはAPI（プログラム間の窓口
 DBはDjangoにSQLiteが付いてくるらしいので十分かと思っているが、  
 とりあえずダミーデータでも良いので動くところを目標とする。
 
+<img width="511" height="674" alt="image" src="https://github.com/user-attachments/assets/eb7d4966-f68b-4fc4-b089-00f3cba3748c" />

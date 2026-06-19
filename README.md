@@ -5,10 +5,10 @@ AIのcursorに質問しつつ、基礎的なところを学んでいます。
 
 ## もくじ
 - [Git](./Git.md)
-- [Web]
-- [Python]
-- [Django]
-- [React]
-- [VSCode]
-- [Docker]
-- [cursor]
+- [Web](./Wen.md)
+- [Python](./Python.md)
+- [Django](./Django.md)
+- [React](./React.md)
+- [VSCode](./VSCode.md)
+- [Docker](./Docker.md)
+- [Cursor](./Cursor.md)

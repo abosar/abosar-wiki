@@ -4,8 +4,8 @@
 AIのcursorに質問しつつ、基礎的なところを学んでいます。  
 
 ## もくじ
-- [Git](./Git.md)
 - [Main](./Main.md)
+- [Git](./Git.md)
 - [Python](./Python.md)
 - [Django](./Django.md)
 - [React](./React.md)

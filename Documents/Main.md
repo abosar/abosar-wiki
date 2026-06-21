@@ -44,20 +44,6 @@ musicnews/
 └── client/     ← Reactの雛形を作成するフォルダ。フロントエンド
 ```
 
-## GitHubにpush（アップロード）する
-```
-# コマンドプロンプトでフォルダに移動
-cd C:\code\musicnews
-# 新規・変更ファイルをcommit用にステージする
-git add .
-# ステージした内容をローカルGitに記録
-git commit -m "Initial commit"
-# 
-git remote add origin https://github.com/あなたのユーザー名/musicnews.git
-git branch -M main
-git push -u origin main
-```
-
 ## バックエンドの雛形作成
 severフォルダで作業する。まずはPython標準モジュールのvenv（virtual environmentの略）を使用し、
 PC自体にパッケージがインストールされないよう仮想環境を作成する。

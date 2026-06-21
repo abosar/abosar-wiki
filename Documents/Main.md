@@ -44,6 +44,15 @@ musicnews/
 └── client/     ← Reactの雛形を作成するフォルダ。フロントエンド
 ```
 
+※省略するが、この辺りでGitHubにPushしている。（.gitignoreなどフォルダ内に何かしらのファイルが必要。）
+```
+1. abosar-wikiをPCにclone
+2. その中にmusicnewsフォルダを作成（コピー）
+3. git add .
+4. git commit -m "◯◯"
+5. git push
+```
+
 ## バックエンドの雛形作成
 severフォルダで作業する。まずはPython標準モジュールのvenv（virtual environmentの略）を使用し、
 PC自体にパッケージがインストールされないよう仮想環境を作成する。

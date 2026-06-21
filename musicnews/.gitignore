@@ -1,0 +1,21 @@
+# Python / Django (server)
+server/.venv/
+server/**/__pycache__/
+server/**/*.pyc
+server/.env
+server/db.sqlite3
+server/staticfiles/
+server/media/
+
+# Node / React (client)
+client/node_modules/
+client/dist/
+client/.env
+client/.env.local
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

@@ -32,7 +32,7 @@ Python3.12.10、node.jsはv24.17.0、npmは11.13.0、gitは2.54.0であること
 今回はひとまず音楽アプリを作る想定で、musicnewsというフォルダをgitで管理する。
 プロジェクト全体の位置でgit init（initialize:初期化の略）を送信。
 ```cmd
-C:\code\musicnews git init
+C:\abosar\abosar-wiki\musicnews git init
 ```
 今回のフォルダ構成。
 ```
@@ -52,38 +52,48 @@ musicnews/
 5. git push
 ```
 
-## バックエンドの雛形作成
-severフォルダで作業する。まずはPython標準モジュールのvenv（virtual environmentの略）を使用し、
+# バックエンドの雛形作成
+## .venv（Pythonモジュール用の仮想環境）の作成
+serverフォルダで作業する。まずはPython標準モジュールのvenv（virtual environmentの略）を使用し、
 PC自体にパッケージがインストールされないよう仮想環境を作成する。
 以下はpythonのモジュール（-m）からvenvを使用し、フォルダ名を.venvにするという意味。
 ```cmd
-C:\code\musicnews\server python -m venv .venv
+C:\abosar\abosar-wiki\musicnews\server python -m venv .venv
 ```
-以降、本プロジェクトでPythonライブラリをインストールしたい時はvenvのアクティベートをしてから行う。  
+以降、本プロジェクトでPythonライブラリをインストールしたい時や、ライブラリのコマンドを使用する時はvenvのアクティベートをしてから行う。  
 （毎回コマンドプロンプトやPowerShell起動時に1回有効化する必要がある。）  
 早速Djangoのインストールで試してみる。以下はコマンドプロンプトの場合。
 ```cmd
-C:\code\musicnews\server .venv\Scripts\activate.bat
+C:\abosar\abosar-wiki\musicnews\server .venv\Scripts\activate.bat
 # ↓に表示が変わる
-(.venv) C:\code\musicnews\server>pip install django
+(.venv) C:\abosar\abosar-wiki\musicnews\server>pip install django
 ```
 成功時、「Successfully installed asgiref-3.11.1 django-6.0.6 sqlparse-0.5.5 tzdata-2026.2」と表示を確認。
-C:\code\musicnews\server\.venv\Lib\site-packagesを見ると確かにライブラリのフォルダが追加されている。
+C:\abosar\abosar-wiki\musicnews\server\.venv\Lib\site-packagesを見ると確かにライブラリのフォルダが追加されている。
 
+## djangorestframework、django-cors-headersのインストール
 続いて以下のパッケージもインストールする。
 djangorestframeworkはReactとDjangoの間をjsonでやり取りする（REST）ために必要で、
 django-cors-headersはReactからDjangoのAPIを呼ぶために必要。
 ```
-pip install djangorestframework django-cors-headers
+(.venv) C:\abosar\abosar-wiki\musicnews\server>pip install djangorestframework django-cors-headers
 ```
 
 補足）Reactは`http://localhost:5173`、Djangoは`http://127.0.0.1:8000`と別々のサイトで動く。  
 ブラウザは別サイト同士の通信をブロック（CORS）するが、django-cors-headersを使うことで許可の設定が書ける。  
 
+## configの作成
+続いて、djangoの機能でプロジェクトのテンプレートを作成する。
+当然グローバルにはdjangoがインストールされていないため、venvをアクティベートした状態で入力する。
+以下は現在フォルダ（.）にconfigという名前のプロジェクトを作成するコマンド。
+```
+(.venv) C:\abosar\abosar-wiki\musicnews\server>python -m django startproject config .
+```
+
 ## Pythonで環境再現するためのファイル作成
 以下のコマンド。このテキストファイルを使用することで、同じPython環境が他PCでも再現できる。
 ```
-C:\code\musicnews\server>pip freeze > requirements.txt
+C:\abosar\abosar-wiki\musicnews\server>pip freeze > requirements.txt
 ```
 requirements.txtのあるフォルダで以下のコマンドを打つと、記載されたパッケージをすべてインストールしてくれる。  
 （venvを使用しないとグローバルにインストールされることに注意）  

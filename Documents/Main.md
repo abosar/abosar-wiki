@@ -85,11 +85,26 @@ django-cors-headersはReactからDjangoのAPIを呼ぶために必要。
 ## configの作成
 続いて、djangoの機能でプロジェクトのテンプレートを作成する。
 当然グローバルにはdjangoがインストールされていないため、venvをアクティベートした状態で入力する。
-以下は現在フォルダ（.）にconfigという名前のプロジェクトを作成するコマンド。
+以下は現在フォルダ（.）にconfigという名前のプロジェクトを作成するコマンド。同フォルダにmanage.pyも作成される。
 ```
 (.venv) C:\abosar\abosar-wiki\musicnews\server>python -m django startproject config .
 ```
-
+ <table>
+    <tr>
+      <td>manage.py</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>configフォルダ</td>
+      <td></td>
+    </tr>
+ </table>
+| コマンド | 意味 |
+| --- | --- |
+| python manage.py runserver | あ |
+| python manage.py runserver | あ |
+| python manage.py runserver | あ |  
+ 
 ## Pythonで環境再現するためのファイル作成
 以下のコマンド。このテキストファイルを使用することで、同じPython環境が他PCでも再現できる。
 ```
